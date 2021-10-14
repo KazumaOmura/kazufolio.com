@@ -1,0 +1,225 @@
+/* ハンバーガーメニュー */
+/*　ハンバーガーメニューボタン　*/
+.hamburger {
+    /* display: block; */
+    /* position: fixed; */
+    z-index: 3;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 6px;
+    background: #fff;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 10px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 30px;
+}
+
+/* スマホメニューを開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top: 16px;
+    left: 6px;
+    background: #222;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    background: #222;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* メニュー背景　*/
+nav.globalMenuSp {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    color: #222;
+    background: #fff;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+}
+
+nav.globalMenuSp ul {
+    margin: 4rem auto;
+    padding: 0;
+    width: 50%;
+}
+
+
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+}
+
+nav.globalMenuSp ul li a {
+    display: block;
+    color: #222;
+    padding: 0.5rem 35px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.menu_underline {
+    position: relative;
+}
+
+.menu_underline:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    ;
+    width: 100%;
+    height: 2px;
+    background: #222;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: 0.3s;
+}
+
+.menu_underline:hover:after {
+    transform: scale(1);
+}
+
+/* クリックでjQueryで追加・削除 */
+nav.globalMenuSp.active {
+    opacity: 100;
+    display: block;
+    transform: translateX(0%);
+}
+
+#hamburger_menu {
+    display: flex;
+    position: relative;
+    /* padding: 20px 0; */
+}
+
+
+
+
+
+
+#mobile_title_area {
+    flex: 0 0 33%;
+    /* border-left: solid 25px #7cbcaa; */
+}
+#mobile_img_area {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    padding: 20px;
+    flex: auto;
+}
+#mobile_sns_logo_area{
+    flex: auto;
+    text-align: end;
+}
+#mobile_hamburger_area{
+    flex: auto;
+    margin-left: auto;
+    text-align: end;
+}
+#mobile_title_area img {
+    width: 60px;
+    /* display: flex; */
+    padding: 0 20px;
+}
+#mobile_sns_logo_area img {
+    width: 26px;
+    display: flex;
+    padding:0px 7px;
+}
+
+
+
+
+
+
+
+#mobile_sns_logo_area ul{
+    display:flex;
+    margin:0;
+    padding:0;
+    position: absolute;
+    top: 50%;
+    right:5rem;
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#mobile_title_area h1 {
+    font-weight: bold;
+    margin-left: 20px;
+    line-height: 0px;
+}
+
+#mobile_title_area p {
+    color: #7cbcaa;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    flex: 0 0 10%;
+}
+
+/* ハンバーガーメニューの表示切り替え */
+#hamburger_menu {
+    display: flex;
+
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+
+    transition: all 0.65s;
+    justify-content:space-between;
+}
+
+.isActive_hamburger_area {
+    background-color: #fff;
+    transition: all 0.65s;
+}
+
+.isActive_hamburger_span {
+    background-color: #222 !important;
+    transition: all 0.65s;
+}
+
+/* @media screen and (min-width: 768px) {
+    #hamburger_menu {
+        display: none;
+    }
+} */
